@@ -1,0 +1,132 @@
+[
+  {
+    "id": 1,
+    "pokemon": "Bulbasaur",
+    "type": "Grass/Poison",
+    "abilities": ["Overgrow", "Chlorophyll"],
+    "hitpoints": 45,
+    "evolutions": ["Ivysaur", "Venusaur"],
+    "location": "Kanto, Pallet Town",
+    "image_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png"
+  },
+  {
+    "id": 2,
+    "pokemon": "Charmander",
+    "type": "Fire",
+    "abilities": ["Blaze", "Solar Power"],
+    "hitpoints": 39,
+    "evolutions": ["Charmeleon", "Charizard"],
+    "location": "Kanto, Route 4",
+    "image_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png"
+  },
+  {
+    "id": 3,
+    "pokemon": "Ivysaur",
+    "type": "Grass/Poison",
+    "abilities": ["Overgrow", "Chlorophyll"],
+    "hitpoints": 60,
+    "evolutions": ["Venusaur"],
+    "location": "Kanto, Pallet Town",
+    "image_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png"
+  },
+  {
+    "id": 4,
+    "pokemon": "Charmeleon",
+    "type": "Fire",
+    "abilities": ["Blaze", "Solar Power"],
+    "hitpoints": 58,
+    "evolutions": ["Charizard"],
+    "location": "Kanto, Route 4",
+    "image_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png"
+  },
+  {
+    "id": 11,
+    "pokemon": "Cyndaquil",
+    "type": "Fire",
+    "abilities": ["Blaze", "Flash Fire"],
+    "hitpoints": 39,
+    "evolutions": ["Quilava", "Typhlosion"],
+    "location": "Johto, New Bark Town",
+    "image_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/11.png"
+  },
+  {
+    "id": 12,
+    "pokemon": "Totodile",
+    "type": "Water",
+    "abilities": ["Torrent", "Sheer Force"],
+    "hitpoints": 50,
+    "evolutions": ["Croconaw", "Feraligatr"],
+    "location": "Johto, New Bark Town",
+    "image_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/12.png"
+  },
+  {
+    "id": 13,
+    "pokemon": "Torchic",
+    "type": "Fire",
+    "abilities": ["Blaze", "Speed Boost"],
+    "hitpoints": 45,
+    "evolutions": ["Combusken", "Blaziken"],
+    "location": "Hoenn, Littleroot Town",
+    "image_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/13.png"
+  },
+  {
+    "id": 14,
+    "pokemon": "Mudkip",
+    "type": "Water",
+    "abilities": ["Torrent", "Damp"],
+    "hitpoints": 50,
+    "evolutions": ["Marshtomp", "Swampert"],
+    "location": "Hoenn, Littleroot Town",
+    "image_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/14.png"
+  },
+  {
+    "id": 15,
+    "pokemon": "Piplup",
+    "type": "Water",
+    "abilities": ["Torrent", "Defiant"],
+    "hitpoints": 53,
+    "evolutions": ["Prinplup", "Empoleon"],
+    "location": "Sinnoh, Twinleaf Town",
+    "image_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/15.png"
+  },
+  {
+    "id": 16,
+    "pokemon": "Turtwig",
+    "type": "Grass",
+    "abilities": ["Overgrow", "Shell Armor"],
+    "hitpoints": 55,
+    "evolutions": ["Grotle", "Torterra"],
+    "location": "Sinnoh, Twinleaf Town",
+    "image_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/16.png"
+  },
+  {
+    "id": 17,
+    "pokemon": "Snivy",
+    "type": "Grass",
+    "abilities": ["Overgrow", "Contrary"],
+    "hitpoints": 45,
+    "evolutions": ["Servine", "Serperior"],
+    "location": "Unova, Nuvema Town",
+    "image_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/17.png"
+  },
+  {
+    "id": 18,
+    "pokemon": "Tepig",
+    "type": "Fire",
+    "abilities": ["Blaze", "Thick Fat"],
+    "hitpoints": 65,
+    "evolutions": ["Pignite", "Emboar"],
+    "location": "Unova, Nuvema Town",
+    "image_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/18.png"
+  },
+  {
+    "id": 19,
+    "pokemon": "Venusaur",
+    "type": "Grass/Poison",
+    "abilities": ["Overgrow", "Chlorophyll"],
+    "hitpoints": 80,
+    "evolutions": [],
+    "location": "Kanto, Pallet Town",
+    "image_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/19.png"
+  }
+]

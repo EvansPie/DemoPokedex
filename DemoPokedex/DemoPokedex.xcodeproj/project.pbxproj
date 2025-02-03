@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		15FF8DA02D4E414000540433 /* DemoPokedexCoreKit in Frameworks */ = {isa = PBXBuildFile; productRef = 15FF8D9F2D4E414000540433 /* DemoPokedexCoreKit */; };
+		15FF8E182D4E44A200540433 /* TagKit in Frameworks */ = {isa = PBXBuildFile; productRef = 15FF8E172D4E44A200540433 /* TagKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15FF8E182D4E44A200540433 /* TagKit in Frameworks */,
 				15FF8DA02D4E414000540433 /* DemoPokedexCoreKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -118,6 +120,7 @@
 			name = DemoPokedex;
 			packageProductDependencies = (
 				15FF8D9F2D4E414000540433 /* DemoPokedexCoreKit */,
+				15FF8E172D4E44A200540433 /* TagKit */,
 			);
 			productName = DemoPokedex;
 			productReference = 15FF8D622D4E37D700540433 /* DemoPokedex.app */;
@@ -203,6 +206,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				15FF8D9E2D4E414000540433 /* XCLocalSwiftPackageReference "../DemoPokedexCoreKit" */,
+				15FF8E162D4E44A200540433 /* XCRemoteSwiftPackageReference "TagKit" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 15FF8D632D4E37D700540433 /* Products */;
@@ -569,10 +573,26 @@
 		};
 /* End XCLocalSwiftPackageReference section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		15FF8E162D4E44A200540433 /* XCRemoteSwiftPackageReference "TagKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielsaidi/TagKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.4.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
 		15FF8D9F2D4E414000540433 /* DemoPokedexCoreKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = DemoPokedexCoreKit;
+		};
+		15FF8E172D4E44A200540433 /* TagKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 15FF8E162D4E44A200540433 /* XCRemoteSwiftPackageReference "TagKit" */;
+			productName = TagKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

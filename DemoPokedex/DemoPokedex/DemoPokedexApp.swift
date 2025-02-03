@@ -11,7 +11,7 @@ import SwiftUI
 struct DemoPokedexApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeView()
         }
     }
 }
