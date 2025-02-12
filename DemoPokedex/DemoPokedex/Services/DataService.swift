@@ -26,11 +26,13 @@ class DataService: ObservableObject {
     /// Fetch and store Pokemon data
     /// This function uses a default `APIClient`, but we can inject a `MockAPIClient`
     @discardableResult
-    public func fetchPokemons(with apiClient: APIClientProtocol = APIClient(), enforceRefresh: Bool = false) async throws -> [Pokemon] {
+    public nonisolated func fetchPokemons(with apiClient: APIClientProtocol = APIClient(), enforceRefresh: Bool = false) async throws -> [Pokemon] {
+        let currentPokemons = await self.pokemons
+        
         /// Only fetch new data if we don't have any `pokemons` stored or if `enforceRefresh == true`
-        if pokemons.isEmpty.not && enforceRefresh.not {
+        if currentPokemons.isEmpty.not && enforceRefresh.not {
             print("\(apiClient is MockAPIClient ? "[MOCK DATA] " : "")Returning stored pokemons...")
-            return pokemons
+            return currentPokemons
         }
         
         print("\(apiClient is MockAPIClient ? "[MOCK DATA] " : "")Fetching pokemons...")
@@ -41,7 +43,9 @@ class DataService: ObservableObject {
             responseType: [Pokemon].self
         ).unique
         
-        self.pokemons = fetchedPokemons
+        await MainActor.run {
+            self.pokemons = fetchedPokemons
+        }
         
         print("\(apiClient is MockAPIClient ? "[MOCK DATA] " : "")Pokemons fetched and stored.")
         return fetchedPokemons

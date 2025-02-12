@@ -93,7 +93,6 @@ extension FilterAndSort {
         let results = await withTaskGroup(of: [Pokemon].self) { group in
             let filteredByType: [Pokemon] = pokemons
             let filteredByRegion: [Pokemon] = pokemons
-            let sortedPokemons: [Pokemon] = pokemons
             
             if let pokemonType = filters.pokemonType {
                 group.addTask {
@@ -107,25 +106,26 @@ extension FilterAndSort {
                 }
             }
             
-            if let sortingOption = filters.sortingOption {
-                group.addTask {
-                    return FilterAndSort.sortPokemons(sortedPokemons, with: sortingOption)
-                }
-            }
-            
-            var filteredPokemons: Set<Pokemon>? = nil
+            var filteredPokemonsSet: Set<Pokemon>? = nil
 
             for await result in group {
                 let resultSet = Set(result)
-                if let currentSet = filteredPokemons {
-                    filteredPokemons = currentSet.intersection(resultSet)
+                if let currentSet = filteredPokemonsSet {
+                    filteredPokemonsSet = currentSet.intersection(resultSet)
                 } else {
-                    filteredPokemons = resultSet
+                    filteredPokemonsSet = resultSet
                 }
             }
-
-            return Array(filteredPokemons ?? [])
+            
+            let filteredPokemonsArray = filteredPokemonsSet == nil ? pokemons : Array(filteredPokemonsSet ?? [])
+            
+            if let sortingOption = filters.sortingOption {
+                return self.sortPokemons(filteredPokemonsArray, with: sortingOption)
+            } else {
+                return filteredPokemonsArray
+            }
         }
+        
         return results
     }
 

@@ -8,7 +8,7 @@
 import Foundation
 import DemoPokedexCoreKit
 
-struct Pokemon: Codable {
+struct Pokemon: Codable, Sendable {
     
     let id: Int
     let name: String

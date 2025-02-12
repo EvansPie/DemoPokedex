@@ -9,8 +9,7 @@ import Foundation
 
 enum DevelopmentEnvironment {
     
-    /// Let it be a `var` in case we need to change it from tests
-    static var current: DevelopmentEnvironment = DevelopmentEnvironment.local
+    static let current: DevelopmentEnvironment = DevelopmentEnvironment.local
     
     case local
     case dev

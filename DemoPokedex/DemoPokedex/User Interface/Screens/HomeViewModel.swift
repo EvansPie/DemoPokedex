@@ -26,6 +26,7 @@ class HomeViewModel: ObservableObject {
     func fetchData() {
         isLoading = true
         errorMessage = nil // Reset error message before starting fetch
+        
         Task {
             do {
                 /// ⚠️ ⚠️⚠️
@@ -38,7 +39,7 @@ class HomeViewModel: ObservableObject {
                 self.visibleDataSource = try await DataService.shared.fetchPokemons(with: mockApiClient, enforceRefresh: true)
                 /// 👇 **REMOTE REQUEST**
                 /// Set `DevelopmentEnvironment.current` to `.local` to get the response from the local server
-//                self.visibleDataSource = try await DataService.shared.fetchPokemons(enforceRefresh: true)
+                //                self.visibleDataSource = try await DataService.shared.fetchPokemons(enforceRefresh: true)
                 self.isLoading = false
             } catch {
                 if let customError = error as? CustomError {
@@ -59,8 +60,10 @@ class HomeViewModel: ObservableObject {
     }
     
     func applyFilters(_ filters: FiltersAndSortingOptions) {
-        self.currentFilters = filters
-        self.visibleDataSource = FilterAndSort.filterAndSortPokemons(DataService.shared.pokemons, with: filters)
+        Task { @MainActor in
+            self.currentFilters = filters
+            self.visibleDataSource = await FilterAndSort.filterAndSortPokemonsAsync(DataService.shared.pokemons, with: filters)
+        }
     }
 }
 
